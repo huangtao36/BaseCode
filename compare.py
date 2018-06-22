@@ -1,3 +1,9 @@
+#-*-coding:utf-8-*-
+"""
+这个代码用于比较两张图片
+"""
+
+
 import numpy as np
 from scipy.misc import imread
 from matplotlib import pyplot as plt
@@ -6,7 +12,7 @@ im_realB = "./epoch111_real_B.png"
 im_fakeB = "./epoch111_fake_B.png"
 
 r = imread(im_realB)
-f = imread(im_fakeB)
+f = imread(im_fakeB) 
 print(type(r), r.shape)
 print(type(f), f.shape)
 

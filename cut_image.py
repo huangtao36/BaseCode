@@ -1,8 +1,9 @@
+#-*-coding:utf-8-*-
+"""
+这个代码用于分区域裁剪图片，自己设定裁剪区域，裁剪图片并另外保存
+"""
+
 from PIL import  Image
-
-
-
-
 import numpy as np
 import os
 from PIL import Image

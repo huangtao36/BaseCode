@@ -1,3 +1,8 @@
+#-*-coding:utf-8-*-
+"""
+将文件夹内的图像文件重命名保存
+"""
+
 from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
@@ -5,6 +10,7 @@ import os
 import ntpath
 import cv2
 from PIL import Image
+
 
 def depth_read(filename, count):
 
@@ -15,12 +21,14 @@ def depth_read(filename, count):
     # depth[depth_png == 0] = -1.
     return image
 
+
 def get_path_list(file_dir, fname):
     L = []
     for root, dirs, files in os.walk(file_dir):
         for file in sorted(files):    # 遍历文件目录下每一个文件
             if fname in file:  # 判断是否包含指定字符串
                 L.append(os.path.join(root, file))
+
 
 if __name__ == '__main__':
     dir = './rgb'  # 文件夹名

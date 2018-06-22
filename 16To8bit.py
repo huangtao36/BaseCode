@@ -1,11 +1,14 @@
+#-*-coding:utf-8-*-
+
+"""
+这个代码用于将16bit的图像数据转换为8bit并保存，原使用对象为KITTI的深度数据集
+"""
+
 import numpy as np
 import os
 from PIL import Image
 
 
-'''
-获得文件路径列表
-'''
 def get_path_list(file_dir, fname):
     L = []
     for root, dirs, files in os.walk(file_dir):
@@ -13,12 +16,13 @@ def get_path_list(file_dir, fname):
             if fname in file:  # 判断是否包含指定字符串
                 L.append(os.path.join(root, file))
 
+
 if __name__ == '__main__':
-    dir = './depth_val_000'  # 文件夹名
-    dirs = os.listdir(dir)      #    ['(1).png', '(10).png', '(100).png', '(1000).png', '(1
+
+    dir = './depth_val_000' 
+    dirs = os.listdir(dir) 
 
     for dir1 in dirs:
-        # print(dir1)
         imgpath = dir + '/' +dir1
         image = Image.open(imgpath)
 
