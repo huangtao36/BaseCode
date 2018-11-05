@@ -17,14 +17,11 @@ def get_path_list(file_dir, fname):
 def make_dirs(paths):
     if isinstance(paths, list) and not isinstance(paths, str):
         for path in paths:
-            mkdir(path)
+            if not os.path.exists(path):
+                os.makedirs(path)
     else:
-        mkdir(paths)
-
-
-def mkdir(path):
-    if not os.path.exists(path):
-        os.makedirs(path)
+        if not os.path.exists(path):
+            os.makedirs(path)
 
 
 def sample_sparse(img, percetage):
